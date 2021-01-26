@@ -1,0 +1,12 @@
+{
+  "name": "reactLocalStorage",
+  "displayName": "reactLocalStorage",
+  "expo": {
+    "name": "reactLocalStorage",
+    "slug": "reactLocalStorage",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
