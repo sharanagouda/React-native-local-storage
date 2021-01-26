@@ -16,11 +16,11 @@ import { PersistGate }  from 'redux-persist/integration/react'
 //Screens
 import HomeScreen from './src/screens/Home'
 import WishlistScreen from './src/screens/WishList'
-
-
+import Home2 from './src/screens/QuotesApp/Home2'
+import NewQuoteScreen from './src/screens/QuotesApp/NewQuote'
+// import LoadingScreen from './src/screens/QuotesApp/LoadingScreen'
 
 const switchNavigator = createSwitchNavigator({
-
   homeStack: createBottomTabNavigator({
 
     Home: {
@@ -57,8 +57,37 @@ const switchNavigator = createSwitchNavigator({
 
       }
   },
+quotes: {
+  screen: Home2,
+  navigationOptions: {
+      tabBarOptions: {
+        activeTintColor: '#1d1d1d',
+        style: {
+          backgroundColor: '#FFF'
+        }
+      },
+      tabBarIcon: ({ focused}) => {
+          let icon = focused === true ? require('./src/images/wish_icon.png') : 
+          require('./src/images/wish_n_icon.png')
+          return <Image source={icon} style={styles.tabIcon} />
+      },
+      title: `Home`,
+  }
+},
 
-  })
+  }),
+  Home2:{
+    screen: Home2,
+    navigationOptions: ({ navigation }) => ({
+        title: `Home`,
+    }),
+},
+NewQuote:{
+    screen: NewQuoteScreen,
+    navigationOptions: ({ navigation }) => ({
+        title: `New Quote`,
+    }),
+}
 
 
 })
